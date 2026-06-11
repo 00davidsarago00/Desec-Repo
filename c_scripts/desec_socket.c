@@ -10,10 +10,13 @@ int main(){
 
     struct sockaddr_in alvo;
 
+    //definindo a origem
     meusocket = socket(AF_INET, SOCK_STREAM,0);
+
+    //definindo o alvo
     alvo.sin_family = AF_INET;
     alvo.sin_port = htons(80);
-    alvo.sin_addr.s_addr = inet_addr("186.217.0.51");
+    alvo.sin_addr.s_addr = inet_addr("37.59.174.225");
 
     conecta = connect(meusocket, (struct sockaddr *)&alvo, sizeof alvo);
     if(conecta == 0){
